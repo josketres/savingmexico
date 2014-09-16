@@ -9,7 +9,7 @@ function FrontpageCtrl($scope, $routeParams, $location, $modal, Customized) {
 			$scope.data = data;
 		}, function(error) {
 			$location.path('/' + defaultId);
-		});		$scope.data = JSON.parse($routeParams.data);
+		});
 	} else {
 		$scope.data = {
 			header : {
