@@ -1,9 +1,9 @@
-var app = angular.module('savingmexico', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('savingmexico', ['services', 'ngRoute', 'ui.bootstrap']);
 
 app.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
-		when('/:data', {
+		when('/:id', {
 			templateUrl: 'partials/frontpage.html',
 			controller: 'FrontpageCtrl'
 		}).

@@ -1,7 +1,15 @@
-function FrontpageCtrl($scope, $routeParams, $location, $modal) {
+function FrontpageCtrl($scope, $routeParams, $location, $modal, Customized) {
 
-	if ($routeParams.data) {
-		$scope.data = JSON.parse($routeParams.data);
+	if ($routeParams.id) {
+		$scope.id = $routeParams.id;
+
+		Customized.query({
+			id: $scope.id
+		}, function(data) {
+			$scope.data = data;
+		}, function(error) {
+			$location.path('/' + defaultId);
+		});		$scope.data = JSON.parse($routeParams.data);
 	} else {
 		$scope.data = {
 			header : {
@@ -17,11 +25,12 @@ function FrontpageCtrl($scope, $routeParams, $location, $modal) {
 	}
 
 	$scope.publish = function() {
-		var data = {};
-		data.header = $scope.data.header;
-		data.caption = $scope.data.caption;
-		var encodedData = encodeURIComponent(JSON.stringify(data));
-		$location.path('/' + encodedData);
+		var frontpage = new Customized();
+		frontpage.header = $scope.data.header;
+		frontpage.caption = $scope.data.caption;
+		saved = frontpage.$save(function(f, putResponseHeaders) {
+			$location.path('/' + f.id);
+		});
 	};
 
 	$scope.open = function() {
