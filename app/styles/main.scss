@@ -1,0 +1,267 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+
+#topleft, #topright, #bottomleft, #bottomright {
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    background: #d61e24;
+    z-index: 91;
+}
+#topleft, #topright {
+    top: 0; 
+}
+#topright, #bottomright {
+    right: 0; 
+}
+#bottomleft, #topleft {
+    left: 0; 
+}
+#bottomleft, #bottomright {
+    bottom: 0; 
+}
+#top, #bottom, #left, #right {
+    background: #d61e24;
+    position: fixed;
+    z-index: 90;
+}
+#left, #right {
+    top: 0; bottom: 0;
+    width: 30px;
+}
+#top, #bottom {
+    left: 0; right: 0;
+    height: 30px;
+}
+#right { 
+    right: 0; 
+    -moz-box-shadow:    inset 7px 0 10px #8e2a2c;
+    -webkit-box-shadow: inset 7px 0 10px #8e2a2c;
+    box-shadow:         inset 7px 0 10px #8e2a2c; 
+}
+#left { 
+    left: 0;
+    -moz-box-shadow:    inset -7px 0 10px #8e2a2c;
+    -webkit-box-shadow: inset -7px 0 10px #8e2a2c;
+    box-shadow:         inset -7px 0 10px #8e2a2c; 
+}
+#top {
+    top: 0; 
+    -moz-box-shadow:    inset 0 -5px 10px #8e2a2c;
+    -webkit-box-shadow: inset 0 -5px 10px #8e2a2c;
+    box-shadow:         inset 0 -5px 10px #8e2a2c; 
+}
+#bottom {
+    bottom: 0; 
+    -moz-box-shadow:    inset 0 5px 10px #8e2a2c;
+    -webkit-box-shadow: inset 0 5px 10px #8e2a2c;
+    box-shadow:         inset 0 5px 10px #8e2a2c; 
+}
+
+@media 
+/* Fairly small screens including iphones */
+only screen and (max-width: 600px),
+/* iPads */
+only screen and (min-device-width: 768px) and (max-device-width: 1024px)
+{
+    #top, #bottom, #left, #right { display: none; }
+    #topleft, #topright, #bottomleft, #bottomright { display: none; }
+}
+
+h2.main_header {
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1em;
+    font-size: 25px;
+    margin: 10px 0 0 0;
+    text-transform: capitalize;
+}
+
+h1.main_title {
+    color: #d61e24;
+    font-family: 'Habibi', serif;
+    margin: 0;
+    font-size: 181px;
+    line-height: 145px;
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.main_photo {
+    width: 100%;
+    text-align: center;
+}
+.main_photo .container {
+    position: relative;
+    width: 527px;
+    height: 475px;
+    margin: auto;
+}
+
+.photo-wrapper {
+    height: 647px;
+    width: auto;
+    overflow: hidden;
+    position: absolute;
+    top: -175px;
+    left: 0;
+    z-index: 1;
+}
+
+.photo_title {
+    width: 100%;
+    text-align: center;
+}
+.photo_title .container {
+    position: relative;
+    width: 527px;
+    margin: auto;
+}
+.photo_title  .content1,
+.photo_title  .content2 {
+    background-color: rgba(255,255,255,0.90);
+    border-radius: 10px;
+    color: #000;
+    position: absolute;
+    width: 347px;
+    z-index: 10;
+    height: 67px;
+    font-size: 55px;
+    line-height: 68px;
+    text-transform: uppercase;
+}
+
+.photo_title  .content1 {
+    top: -296px;
+    left: 28.5px;
+}
+
+.photo_title  .content2 {
+    top: -228px;
+    left: 146.5px;
+}
+.photo_title  .content3 {
+    background-color: rgba(0,0,0,0.90);
+    border-radius: 5px;
+    color: #fff;
+    position: absolute;
+    width: 365px;
+    z-index: 10;
+    font-size: 12px;
+    line-height: 1em;
+    top: -152px;
+    left: 81px;
+    text-transform: uppercase;
+    padding: 10px 5px;
+}
+.options {
+    text-align: center;
+}
+
+.form-group input[type="text"] {
+  margin-bottom: 10px;
+}
+
+/* Fix problems with the width of the form elements */
+input[type="text"], textarea {
+   /* @include box-sizing(border-box);*/
+    -moz-box-sizing: border-box;
+    /*box-sizing: border-box;*/
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
