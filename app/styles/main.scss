@@ -17,9 +17,11 @@ body {
 }
 
 .frontpage-container {
+  font-size: 0.9em;
 
   .container {
     border: 20px solid #d61e24;
+    overflow: hidden;
   }
 
   h1 {
@@ -44,94 +46,68 @@ body {
       margin: 10px 0 0 0;
       text-transform: capitalize;
   }
+
+  .main-photo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .photo-title {
+    position: relative;
+    margin-top: 140px;
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 278px;
+    text-align: center;
+    z-index: 10;
+
+    div {
+      display: inline-block;
+    }
+
+    .content1, .content2 {
+        background-color: rgba(0,0,0,0.75);
+        border-radius: 10px;
+        color: #fff;
+        min-width: 347px;
+        min-height: 67px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 5.5em;
+        line-height: 1.1em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        position: relative;
+        padding: 0 15px;
+    }
+
+    .content1 {
+      left: -30px;
+    }
+
+    .content2 {
+      left: 30px; 
+    }
+    .content3 {
+        background-color: rgba(255,255,255,0.90);
+        border-radius: 5px;
+        color: #000;
+        width: 411px;
+        z-index: 10;
+        font-size: 1em;
+        line-height: 1.1em;
+        text-transform: uppercase;
+        padding: 10px 5px;
+    }
+
+  }
 }
 
 .frontpage-options {
   text-align: center;
   margin-top: 10px;
-}
-
-@media 
-/* Fairly small screens including iphones */
-only screen and (max-width: 600px),
-/* iPads */
-only screen and (min-device-width: 768px) and (max-device-width: 1024px)
-{
-
-}
-
-
-
-
-.main_photo {
-    width: 100%;
-    text-align: center;
-}
-.main_photo .photo-container {
-    position: relative;
-    width: 527px;
-    height: 475px;
-    margin: auto;
-}
-
-.photo-wrapper {
-    height: 647px;
-    width: auto;
-    overflow: hidden;
-    position: absolute;
-    top: -175px;
-    left: 0;
-    z-index: 1;
-}
-
-.photo_title {
-    width: 100%;
-    text-align: center;
-}
-.photo_title .title-container {
-    position: relative;
-    width: 527px;
-    margin: auto;
-}
-.photo_title  .content1,
-.photo_title  .content2 {
-    background-color: rgba(255,255,255,0.90);
-    border-radius: 10px;
-    color: #000;
-    position: absolute;
-    width: 347px;
-    z-index: 10;
-    height: 67px;
-    font-size: 55px;
-    line-height: 68px;
-    text-transform: uppercase;
-}
-
-.photo_title  .content1 {
-    top: -296px;
-    left: 28.5px;
-}
-
-.photo_title  .content2 {
-    top: -228px;
-    left: 146.5px;
-}
-.photo_title  .content3 {
-    background-color: rgba(0,0,0,0.90);
-    border-radius: 5px;
-    color: #fff;
-    position: absolute;
-    width: 365px;
-    z-index: 10;
-    font-size: 12px;
-    line-height: 1em;
-    top: -152px;
-    left: 81px;
-    text-transform: uppercase;
-    padding: 10px 5px;
-}
-.options {
-    text-align: center;
 }
 
 .form-group input[type="text"] {
@@ -152,55 +128,9 @@ input[type="text"], textarea {
   padding: 0.2em 0;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
+@media screen and (min-width: 600px) {
+  .frontpage-container {
+    font-size: 1em;
   }
 }
 
@@ -208,22 +138,6 @@ input[type="text"], textarea {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
 
