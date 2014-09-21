@@ -8,7 +8,7 @@
  * Controller of the yoApp
  */
 angular.module('savingmexico')
-	.controller('FrontpageCtrl', function($scope, $routeParams, $location, $modal, Customized) {
+	.controller('FrontpageCtrl', function($scope, $route, $routeParams, $location, $modal, Customized) {
 
 		if ($routeParams.id) {
 			$scope.id = $routeParams.id;
@@ -38,12 +38,12 @@ angular.module('savingmexico')
 			var frontpage = new Customized();
 			frontpage.header = $scope.data.header;
 			frontpage.caption = $scope.data.caption;
-			saved = frontpage.$save(function(f, putResponseHeaders) {
-				$location.path('/' + f.id);
+			frontpage.$save(function(saved, putResponseHeaders) {
+				$location.path('/' + saved.id);
 			});
 		};
 
-		$scope.open = function() {
+		$scope.edit = function() {
 			var modalInstance = $modal.open({
 				templateUrl: 'myModalContent.html',
 				controller: ModalInstanceCtrl,
@@ -61,6 +61,13 @@ angular.module('savingmexico')
 				$log.info('Modal dismissed at: ' + new Date());
 			});
 		};
+
+		$scope.alerts = [];
+
+		$scope.closeAlert = function(index) {
+			$scope.alerts.splice(index, 1);
+		};
+
 	});
 
 /**
@@ -74,7 +81,6 @@ angular.module('savingmexico')
 function ModalInstanceCtrl($scope, $modalInstance, data) {
 
 	$scope.data = data;
-
 
 	$scope.ok = function() {
 		$modalInstance.close($scope.data);

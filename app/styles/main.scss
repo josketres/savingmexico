@@ -3,63 +3,52 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+.ng-hide {
+  /* this is just another form of hiding an element */
+  display:block!important;
+  position:absolute;
+  top:-9999px;
+  left:-9999px;
+}
 
+body {
+  background-color: #e3ddcd;
+  padding-bottom: 20px;
+}
 
-#topleft, #topright, #bottomleft, #bottomright {
-    height: 30px;
-    width: 30px;
-    position: fixed;
-    background: #d61e24;
-    z-index: 91;
+.frontpage-container {
+
+  .container {
+    border: 20px solid #d61e24;
+  }
+
+  h1 {
+      color: #d61e24;
+      font-family: 'Habibi', serif;
+      margin: 0;
+      font-size: 13em;
+      line-height: 1em;
+      width: 100%;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+  }
+
+  .main-header {
+      font-family: 'Lato', sans-serif;
+      width: 100%;
+      font-weight: normal;
+      text-align: center;
+      line-height: 1em;
+      font-size: 2.1em;
+      margin: 10px 0 0 0;
+      text-transform: capitalize;
+  }
 }
-#topleft, #topright {
-    top: 0; 
-}
-#topright, #bottomright {
-    right: 0; 
-}
-#bottomleft, #topleft {
-    left: 0; 
-}
-#bottomleft, #bottomright {
-    bottom: 0; 
-}
-#top, #bottom, #left, #right {
-    background: #d61e24;
-    position: fixed;
-    z-index: 90;
-}
-#left, #right {
-    top: 0; bottom: 0;
-    width: 30px;
-}
-#top, #bottom {
-    left: 0; right: 0;
-    height: 30px;
-}
-#right { 
-    right: 0; 
-    -moz-box-shadow:    inset 7px 0 10px #8e2a2c;
-    -webkit-box-shadow: inset 7px 0 10px #8e2a2c;
-    box-shadow:         inset 7px 0 10px #8e2a2c; 
-}
-#left { 
-    left: 0;
-    -moz-box-shadow:    inset -7px 0 10px #8e2a2c;
-    -webkit-box-shadow: inset -7px 0 10px #8e2a2c;
-    box-shadow:         inset -7px 0 10px #8e2a2c; 
-}
-#top {
-    top: 0; 
-    -moz-box-shadow:    inset 0 -5px 10px #8e2a2c;
-    -webkit-box-shadow: inset 0 -5px 10px #8e2a2c;
-    box-shadow:         inset 0 -5px 10px #8e2a2c; 
-}
-#bottom {
-    bottom: 0; 
-    -moz-box-shadow:    inset 0 5px 10px #8e2a2c;
-    -webkit-box-shadow: inset 0 5px 10px #8e2a2c;
-    box-shadow:         inset 0 5px 10px #8e2a2c; 
+
+.frontpage-options {
+  text-align: center;
+  margin-top: 10px;
 }
 
 @media 
@@ -68,39 +57,17 @@ only screen and (max-width: 600px),
 /* iPads */
 only screen and (min-device-width: 768px) and (max-device-width: 1024px)
 {
-    #top, #bottom, #left, #right { display: none; }
-    #topleft, #topright, #bottomleft, #bottomright { display: none; }
+
 }
 
-h2.main_header {
-    font-family: 'Lato', sans-serif;
-    width: 100%;
-    font-weight: normal;
-    text-align: center;
-    line-height: 1em;
-    font-size: 25px;
-    margin: 10px 0 0 0;
-    text-transform: capitalize;
-}
 
-h1.main_title {
-    color: #d61e24;
-    font-family: 'Habibi', serif;
-    margin: 0;
-    font-size: 181px;
-    line-height: 145px;
-    width: 100%;
-    font-weight: normal;
-    text-align: center;
-    text-transform: uppercase;
-}
 
 
 .main_photo {
     width: 100%;
     text-align: center;
 }
-.main_photo .container {
+.main_photo .photo-container {
     position: relative;
     width: 527px;
     height: 475px;
@@ -121,7 +88,7 @@ h1.main_title {
     width: 100%;
     text-align: center;
 }
-.photo_title .container {
+.photo_title .title-container {
     position: relative;
     width: 527px;
     margin: auto;
@@ -183,12 +150,6 @@ input[type="text"], textarea {
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
-}
-
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -265,3 +226,4 @@ body {
     border-bottom: 0;
   }
 }
+
