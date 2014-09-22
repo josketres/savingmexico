@@ -27,8 +27,8 @@ body {
   h1 {
       color: #d61e24;
       font-family: 'Habibi', serif;
-      margin: 0;
-      font-size: 13em;
+      margin: 0 auto;
+      font-size: 7.5em;
       line-height: 1em;
       width: 100%;
       font-weight: normal;
@@ -42,7 +42,7 @@ body {
       font-weight: normal;
       text-align: center;
       line-height: 1em;
-      font-size: 2.1em;
+      font-size: 1em;
       margin: 10px 0 0 0;
       text-transform: capitalize;
   }
@@ -55,12 +55,16 @@ body {
     z-index: 1;
   }
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   .photo-title {
     position: relative;
-    margin-top: 140px;
+    margin-top: 100px;
     margin-bottom: 10px;
     width: 100%;
-    min-height: 278px;
     text-align: center;
     z-index: 10;
 
@@ -72,15 +76,15 @@ body {
         background-color: rgba(0,0,0,0.75);
         border-radius: 10px;
         color: #fff;
-        min-width: 347px;
-        min-height: 67px;
         font-family: 'Open Sans', sans-serif;
-        font-size: 5.5em;
-        line-height: 1.1em;
+        font-size: 3em;
+        line-height: 1.5em;
         text-transform: uppercase;
         margin-bottom: 10px;
         position: relative;
         padding: 0 15px;
+        min-width: 205px;
+        min-height: 50px;
     }
 
     .content1 {
@@ -94,7 +98,6 @@ body {
         background-color: rgba(255,255,255,0.90);
         border-radius: 5px;
         color: #000;
-        width: 411px;
         z-index: 10;
         font-size: 1em;
         line-height: 1.1em;
@@ -131,6 +134,36 @@ input[type="text"], textarea {
 @media screen and (min-width: 600px) {
   .frontpage-container {
     font-size: 1em;
+
+    .main-header {
+      font-size: 2.1em;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+    }
+
+    .photo-title {
+      margin-top: 140px;
+      min-height: 278px;
+    }
+
+    h1 {
+      font-size: 13em;
+    }
+
+    .content1, .content2 {
+      font-size: 5.5em;
+      line-height: 1.1em;
+      min-width: 347px;
+      min-height: 67px;
+    }
+
+    .content3 {
+      width: 411px;
+    }
+
   }
 }
 
